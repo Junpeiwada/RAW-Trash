@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "electron-forge: start webpack",
+      "type": "shell",
+      "command": "npm start",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^ERROR"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Preparing webpack bundles",
+          "endsPattern": "Launched Electron app"
+        }
+      }
+    }
+  ]
+}
