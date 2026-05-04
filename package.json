@@ -1,0 +1,52 @@
+{
+  "name": "raw-trash",
+  "productName": "RAW-Trash",
+  "version": "1.0.0",
+  "description": "RAWファイルとJPGファイルのペアを管理・整理するデスクトップアプリ",
+  "main": ".webpack/main",
+  "private": true,
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts,.tsx .",
+    "M系Macビルドインストール": "npm run lint && electron-forge package && rm -rf /Applications/RAW-Trash.app && cp -R out/RAW-Trash-darwin-arm64/RAW-Trash.app /Applications/ && echo \"正常完了 バージョン $(node -p \\\"require('./package.json').version\\\")\" && say -v Kyoko \"RAW-Trashのビルドとインストールが完了しました。バージョン$(node -p \\\"require('./package.json').version\\\")\" || (echo \"エラーが発生しました\" && say -v Kyoko \"RAW-Trashでエラーが発生しました\" && exit 1)"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Junpei Wada",
+    "email": "junpeiwada@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.11.1",
+    "@electron-forge/maker-deb": "^7.11.1",
+    "@electron-forge/maker-rpm": "^7.11.1",
+    "@electron-forge/maker-squirrel": "^7.11.1",
+    "@electron-forge/maker-zip": "^7.11.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.11.1",
+    "@electron-forge/plugin-fuses": "^7.11.1",
+    "@electron-forge/plugin-webpack": "^7.11.1",
+    "@electron/fuses": "^1.8.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "css-loader": "^6.11.0",
+    "electron": "41.5.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "fork-ts-checker-webpack-plugin": "^7.3.0",
+    "node-loader": "^2.1.0",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.7",
+    "typescript": "~4.5.4"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}
